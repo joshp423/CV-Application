@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import GeneralInfo from './components/generalInfo';
+import ExpInfo from './components/expInfo';
 import './App.css'
 
 
@@ -20,6 +21,10 @@ function App() {
       <form onSubmit={e => e.preventDefault()}>
     
       <GeneralInfo
+        formState={formState}
+      />
+      
+      <ExpInfo
         formState={formState}
       />
 
