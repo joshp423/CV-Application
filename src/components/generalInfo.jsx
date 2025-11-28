@@ -22,6 +22,7 @@ export default function GeneralInfo({ formState }){
                     name="name"
                     value={genInfo.name}
                     onChange={updateValues}
+                    required
                 />
 
                 <input
@@ -29,12 +30,14 @@ export default function GeneralInfo({ formState }){
                     name="email"
                     value={genInfo.email}
                     onChange={updateValues}
+                    required
                 />
                 <input
                     placeholder="Phone Number"
                     name="phoneNumber"
                     value={genInfo.phoneNumber}
                     onChange={updateValues}
+                    required
                 />
             </div>
         )

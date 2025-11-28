@@ -31,6 +31,7 @@ function App() {
       <button type='submit' onClick={submitForm}>
         {formState === 1 ? "Edit" : "Submit"}
       </button>
+      
      </form>
     </div>
   )
