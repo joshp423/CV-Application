@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 function ExpInputs({ iteration, expInfo, updateValues }) {
     return (
         <>
@@ -38,23 +39,23 @@ export default function ExpInfo({ formState }){
     ]);
     const [expCounter, setExpCounter] = useState(1);
 
-    function updateValues(e, iteration) {
-        
-        setExpInfo({
-            ...expInfo[iteration],
-            [e.target.name]: e.target.value
-        })
+    function addExp() {
+        setExpCounter(expCounter +1)
     }
 
-    function addExp() {
-        setExpCounter(expCounter +=1)
-    }
+    function updateValues(e, iteration) {
+        
+    setExpInfo({
+        ...expInfo[iteration],
+        [e.target.name]: e.target.value
+    })
+}
     
     if (formState === 0) {
         return (
             
             <div className="generalInfoForm">
-                {!expInfo || expCounter < 2 && (
+                {!expInfo || expCounter < 3 && (
                     <button type="button" onClick={addExp}>
                         Add Experience - max 3
                     </button>
@@ -63,6 +64,8 @@ export default function ExpInfo({ formState }){
                 {expCounter === 1 && (
                     <ExpInputs
                         iteration = {0}
+                        expInfo = {expInfo}
+                        updateValues={updateValues}
                     />
                 )}
 
@@ -70,9 +73,13 @@ export default function ExpInfo({ formState }){
                     <>
                         <ExpInputs
                             iteration = {0}
+                            expInfo = {expInfo}
+                            updateValues={updateValues}
                         />
                         <ExpInputs 
                             iteration = {1}
+                            expInfo = {expInfo}
+                            updateValues={updateValues}
                         />
                     </>
                 )}
@@ -81,12 +88,18 @@ export default function ExpInfo({ formState }){
                     <>
                         <ExpInputs
                             iteration = {0}
+                            expInfo = {expInfo}
+                            updateValues={updateValues}
                         />
                         <ExpInputs
                             iteration = {1}
+                            expInfo = {expInfo}
+                            updateValues={updateValues}
                         />
                         <ExpInputs
                             iteration = {2}
+                            expInfo = {expInfo}
+                            updateValues={updateValues} 
                         />
                     </>
                 )}
