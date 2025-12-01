@@ -6,25 +6,38 @@ function ExpInputs({ iteration, expInfo, updateValues }) {
         <>
             <input
                 placeholder="Company Name"
-                name="name"
+                name="companyName"
                 value={expInfo[iteration].name}
+                type="text"
                 onChange={(e) => updateValues(e, iteration)}
-                required
-            />
-
-            <input
-                placeholder="Email"
-                name="email"
-                value={expInfo[iteration].email}
-                onChange={(e) => updateValues(e, iteration)}
-                required
             />
             <input
-                placeholder="Phone Number"
-                name="phoneNumber"
-                value={expInfo[iteration].phoneNumber}
+                placeholder="Position Title"
+                name="positionTitle"
+                value={expInfo[iteration].positionTitle}
+                type="text"
                 onChange={(e) => updateValues(e, iteration)}
-                required
+            />
+            <input
+                placeholder="Description"
+                name="description"
+                value={expInfo[iteration].description}
+                type="text"
+                onChange={(e) => updateValues(e, iteration)}
+            />
+            <input
+                placeholder="Start Date"
+                name="dateStart"
+                value={expInfo[iteration].dateStart}
+                type="date"
+                onChange={(e) => updateValues(e, iteration)}
+            />
+            <input
+                placeholder="Finish Date"
+                name="dateFinish"
+                value={expInfo[iteration].dateFinish}
+                type="date"
+                onChange={(e) => updateValues(e, iteration)}
             />
         </>
     )
@@ -32,18 +45,18 @@ function ExpInputs({ iteration, expInfo, updateValues }) {
 
 export default function ExpInfo({ formState }){
     const [expInfo, setExpInfo] = useState([
-        {name: "", email: "", phoneNumber: ""},
-        {name: "", email: "", phoneNumber: ""},
-        {name: "", email: "", phoneNumber: ""}
+        {companyName: "", positionTitle: "", description: "", dateStart: "", dateFinish: ""},
+        {companyName: "", positionTitle: "", description: "", dateStart: "", dateFinish: ""},
+        {companyName: "", positionTitle: "", description: "", dateStart: "", dateFinish: ""}
     ]);
     const [expCounter, setExpCounter] = useState(1);
 
     function addExp() {
-        setExpCounter(expCounter +1)
+        setExpCounter(expCounter +1);
     }
 
     function removeExp() {
-        setExpCounter(expCounter -1)
+        setExpCounter(expCounter -1);
     }
 
     function updateValues(e, iteration) {
@@ -53,7 +66,8 @@ export default function ExpInfo({ formState }){
             ...updated[iteration],
             [e.target.name]: e.target.value
         };
-        setExpInfo(updated)
+        setExpInfo(updated);
+        
     }
     
     if (formState === 0) {
@@ -73,7 +87,6 @@ export default function ExpInfo({ formState }){
                             expInfo = {expInfo}
                             updateValues={updateValues}
                         />
-                        <button type="button" onClick={removeExp}>Remove Experience</button>
                     </>
                 )}
 
@@ -84,7 +97,6 @@ export default function ExpInfo({ formState }){
                             expInfo = {expInfo}
                             updateValues={updateValues}
                         />
-                        <button type="button" onClick={removeExp}>Remove Experience</button>
 
                         <ExpInputs 
                             iteration = {1}
@@ -102,8 +114,6 @@ export default function ExpInfo({ formState }){
                             expInfo = {expInfo}
                             updateValues={updateValues}
                         />
-                        <button type="button" onClick={removeExp}>Remove Experience</button>
-
                         <ExpInputs
                             iteration = {1}
                             expInfo = {expInfo}
@@ -129,38 +139,43 @@ export default function ExpInfo({ formState }){
             <div className="generalInfoDisplay">
                 {expCounter === 1 && (
                     <>
-                        <h1>{expInfo[0].name}</h1>
-                        <p>{expInfo[0].email}</p>
-                        <p>{expInfo[0].phoneNumber}</p>
-                        
+                        <h1>{expInfo[0].companyName}</h1>
+                        <p>{expInfo[0].positionTitle}</p>
+                        <p>{expInfo[0].description}</p>
+                        <p>{expInfo[0].dateStart + " - " + expInfo[0].dateFinish}</p>
                     </>
                 )}
 
                 {expCounter === 2 && (
                     <>
-                        <h1>{expInfo[0].name}</h1>
-                        <p>{expInfo[0].email}</p>
-                        <p>{expInfo[0].phoneNumber}</p>
+                        <h1>{expInfo[0].companyName}</h1>
+                        <p>{expInfo[0].positionTitle}</p>
+                        <p>{expInfo[0].description}</p>
+                        <p>{expInfo[0].dateStart + " - " + expInfo[0].dateFinish}</p>
 
-                        <h1>{expInfo[1].name}</h1>
-                        <p>{expInfo[1].email}</p>
-                        <p>{expInfo[1].phoneNumber}</p>
+                        <h1>{expInfo[1].companyName}</h1>
+                        <p>{expInfo[1].positionTitle}</p>
+                        <p>{expInfo[1].description}</p>
+                        <p>{expInfo[1].dateStart + " - " + expInfo[1].dateFinish}</p>
                     </>
                 )}
 
                 {expCounter === 3 && (
                     <>
-                        <h1>{expInfo[0].name}</h1>
-                        <p>{expInfo[0].email}</p>
-                        <p>{expInfo[0].phoneNumber}</p>
+                        <h1>{expInfo[0].companyName}</h1>
+                        <p>{expInfo[0].positionTitle}</p>
+                        <p>{expInfo[0].description}</p>
+                        <p>{expInfo[0].dateStart + " - " + expInfo[0].dateFinish}</p>
 
-                        <h1>{expInfo[1].name}</h1>
-                        <p>{expInfo[1].email}</p>
-                        <p>{expInfo[1].phoneNumber}</p>
+                        <h1>{expInfo[1].companyName}</h1>
+                        <p>{expInfo[1].positionTitle}</p>
+                        <p>{expInfo[1].description}</p>
+                        <p>{expInfo[1].dateStart + " - " + expInfo[1].dateFinish}</p>
 
-                        <h1>{expInfo[2].name}</h1>
-                        <p>{expInfo[2].email}</p>
-                        <p>{expInfo[2].phoneNumber}</p>
+                        <h1>{expInfo[2].companyName}</h1>
+                        <p>{expInfo[2].positionTitle}</p>
+                        <p>{expInfo[2].description}</p>
+                        <p>{expInfo[2].dateStart + " - " + expInfo[2].dateFinish}</p>
                     </>
                 )}
                 

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import GeneralInfo from './components/generalInfo';
 import ExpInfo from './components/expInfo';
 import './App.css'
+import EduInfo from './components/educationalInfo';
 
 
 
@@ -25,6 +26,10 @@ function App() {
       />
       
       <ExpInfo
+        formState={formState}
+      />
+
+      <EduInfo
         formState={formState}
       />
 
