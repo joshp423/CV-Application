@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../styles/eduStyle.css';
 
 export default function EduInfo({ formState }){
     const [eduInfo, setEduInfo] = useState(
