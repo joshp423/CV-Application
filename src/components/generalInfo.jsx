@@ -47,8 +47,10 @@ export default function GeneralInfo({ formState }){
         return (
             <div className="generalInfoDisplay">
                 <h1>{genInfo.name}</h1>
-                <p>{genInfo.email}</p>
-                <p>{genInfo.phoneNumber}</p>
+                <div>
+                    <p>{genInfo.email}</p>
+                    <p>{genInfo.phoneNumber}</p>
+                </div>
             </div>
         )
     }

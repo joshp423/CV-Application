@@ -7,7 +7,7 @@ function ExpInputs({ iteration, expInfo, updateValues }) {
             <input
                 placeholder="Company Name"
                 name="companyName"
-                value={expInfo[iteration].name}
+                value={expInfo[iteration].companyName}
                 type="text"
                 onChange={(e) => updateValues(e, iteration)}
             />
@@ -142,11 +142,11 @@ export default function ExpInfo({ formState }){
     }
     else {
         return (
-            <div className="generalInfoDisplay">
+            <div className="expInfoDisplay">
+                <h3>Experience</h3>
                 {expCounter === 1 && (
                     <>
-                        <h1>{expInfo[0].companyName}</h1>
-                        <p>{expInfo[0].positionTitle}</p>
+                        <h1>{expInfo[0].companyName + " - " + expInfo[0].positionTitle}</h1>
                         <p>{expInfo[0].description}</p>
                         <p>{expInfo[0].dateStart + " - " + expInfo[0].dateFinish}</p>
                     </>
@@ -154,13 +154,11 @@ export default function ExpInfo({ formState }){
 
                 {expCounter === 2 && (
                     <>
-                        <h1>{expInfo[0].companyName}</h1>
-                        <p>{expInfo[0].positionTitle}</p>
+                        <h1>{expInfo[0].companyName + " - " + expInfo[0].positionTitle}</h1>
                         <p>{expInfo[0].description}</p>
                         <p>{expInfo[0].dateStart + " - " + expInfo[0].dateFinish}</p>
 
-                        <h1>{expInfo[1].companyName}</h1>
-                        <p>{expInfo[1].positionTitle}</p>
+                        <h1>{expInfo[1].companyName + " - " + expInfo[1].positionTitle}</h1>
                         <p>{expInfo[1].description}</p>
                         <p>{expInfo[1].dateStart + " - " + expInfo[1].dateFinish}</p>
                     </>
@@ -168,18 +166,15 @@ export default function ExpInfo({ formState }){
 
                 {expCounter === 3 && (
                     <>
-                        <h1>{expInfo[0].companyName}</h1>
-                        <p>{expInfo[0].positionTitle}</p>
+                        <h1>{expInfo[0].companyName + " - " + expInfo[0].positionTitle}</h1>
                         <p>{expInfo[0].description}</p>
                         <p>{expInfo[0].dateStart + " - " + expInfo[0].dateFinish}</p>
 
-                        <h1>{expInfo[1].companyName}</h1>
-                        <p>{expInfo[1].positionTitle}</p>
+                        <h1>{expInfo[1].companyName + " - " + expInfo[1].positionTitle}</h1>
                         <p>{expInfo[1].description}</p>
                         <p>{expInfo[1].dateStart + " - " + expInfo[1].dateFinish}</p>
 
-                        <h1>{expInfo[2].companyName}</h1>
-                        <p>{expInfo[2].positionTitle}</p>
+                        <h1>{expInfo[2].companyName + " - " + expInfo[2].positionTitle}</h1>
                         <p>{expInfo[2].description}</p>
                         <p>{expInfo[2].dateStart + " - " + expInfo[2].dateFinish}</p>
                     </>

@@ -1,6 +1,6 @@
 body {
   place-items: start;
-  background-color: black;
+  background-color: rgb(54, 54, 54);
 }
 
 #root {
@@ -53,12 +53,25 @@ form {
   width: 1000px;
   height: auto;
   background-color: white;
+  align-items: center;
 }
 
+form>button {
+  margin-bottom: 10px;
+}
 
 input {
   padding: 5px;
   border-radius: 15px;
   padding-left: 10px;
   border: 1px solid black;
+}
+
+h1 {
+  margin: 20px 0px 15px 0px;
+}
+
+button {
+  background-color: rgb(54, 54, 54);
+  color: white
 }
