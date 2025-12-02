@@ -1,3 +1,22 @@
 .eduInfoForm {
+    padding-top: 10px;
+    border-top: 1px solid;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin: 0px 50px 25px 50px;
+}
 
+.eduInfoForm>input {
+    margin-right: 20px;
+    padding-left: 10px;
+}
+
+.eduInfoForm>h2 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.eduInfoDisplay {
+    padding-right: 250px;
+    padding-left: 250px;
 }

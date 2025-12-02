@@ -1,9 +1,9 @@
 import { useState } from "react";
-
+import "../styles/expStyle.css"
 
 function ExpInputs({ iteration, expInfo, updateValues }) {
     return (
-        <>
+        <div className="expInfoInputs">
             <input
                 placeholder="Company Name"
                 name="companyName"
@@ -29,17 +29,17 @@ function ExpInputs({ iteration, expInfo, updateValues }) {
                 placeholder="Start Date"
                 name="dateStart"
                 value={expInfo[iteration].dateStart}
-                type="date"
+                type="text"
                 onChange={(e) => updateValues(e, iteration)}
             />
             <input
                 placeholder="Finish Date"
                 name="dateFinish"
                 value={expInfo[iteration].dateFinish}
-                type="date"
+                type="text"
                 onChange={(e) => updateValues(e, iteration)}
             />
-        </>
+        </div>
     )
 }
 
@@ -73,64 +73,70 @@ export default function ExpInfo({ formState }){
     if (formState === 0) {
         return (
             
-            <div className="generalInfoForm">
-                {!expInfo || expCounter < 3 && (
-                    <button type="button" onClick={addExp}>
-                        Add Experience - max 3
-                    </button>
-                )}
+            <div className="expInfoForm">
+                <div className="expInfoTitle">
+                    <h2>Job Experience</h2>
+
+                    {!expInfo || expCounter < 3 && (
+                        <button type="button" onClick={addExp}>
+                            Add Experience - max 3
+                        </button>
+                    )}
+                </div>
+                <div className="expInfoInputContainer">
             
-                {expCounter === 1 && (
-                    <>
-                        <ExpInputs
-                            iteration = {0}
-                            expInfo = {expInfo}
-                            updateValues={updateValues}
-                        />
-                    </>
-                )}
+                    {expCounter === 1 && (
+                        <>
+                            <ExpInputs
+                                iteration = {0}
+                                expInfo = {expInfo}
+                                updateValues={updateValues}
+                            />
+                        </>
+                    )}
 
-                {expCounter === 2 && (
-                    <>
-                        <ExpInputs
-                            iteration = {0}
-                            expInfo = {expInfo}
-                            updateValues={updateValues}
-                        />
+                    {expCounter === 2 && (
+                        <>
+                            <ExpInputs
+                                iteration = {0}
+                                expInfo = {expInfo}
+                                updateValues={updateValues}
+                            />
 
-                        <ExpInputs 
-                            iteration = {1}
-                            expInfo = {expInfo}
-                            updateValues={updateValues}
-                        />
-                        <button type="button" onClick={removeExp}>Remove Experience</button>
-                    </>
-                )}
+                            <ExpInputs 
+                                iteration = {1}
+                                expInfo = {expInfo}
+                                updateValues={updateValues}
+                            />
+                            <button type="button" onClick={removeExp}>Remove Experience</button>
+                        </>
+                    )}
 
-                {expCounter === 3 && (
-                    <>
-                        <ExpInputs
-                            iteration = {0}
-                            expInfo = {expInfo}
-                            updateValues={updateValues}
-                        />
-                        <ExpInputs
-                            iteration = {1}
-                            expInfo = {expInfo}
-                            updateValues={updateValues}
-                        />
-                        <button type="button" onClick={removeExp}>Remove Experience</button>
+                    {expCounter === 3 && (
+                        <>
+                            <ExpInputs
+                                iteration = {0}
+                                expInfo = {expInfo}
+                                updateValues={updateValues}
+                            />
+                            <ExpInputs
+                                iteration = {1}
+                                expInfo = {expInfo}
+                                updateValues={updateValues}
+                            />
+                            <button type="button" onClick={removeExp}>Remove Experience</button>
 
-                        <ExpInputs
-                            iteration = {2}
-                            expInfo = {expInfo}
-                            updateValues={updateValues} 
-                        />
-                        <button type="button" onClick={removeExp}>Remove Experience</button>
+                            <ExpInputs
+                                iteration = {2}
+                                expInfo = {expInfo}
+                                updateValues={updateValues} 
+                            />
+                            <button type="button" onClick={removeExp}>Remove Experience</button>
 
-                    </>
-                )}
+                        </>
+                    )}
 
+                </div>
             </div>
         )
     }

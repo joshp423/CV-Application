@@ -16,6 +16,8 @@ export default function EduInfo({ formState }){
     if (formState === 0) {
         return (
             <div className="eduInfoForm">
+
+                <h2>Education</h2>
                 <input
                     type="text"
                     name="schoolName"
@@ -29,9 +31,9 @@ export default function EduInfo({ formState }){
                     onChange={(e) => updateValues(e)}
                 />
                 <input
-                    type="date"
+                    type="text"
                     name="studyDate"
-                    placeholder="date completed"
+                    placeholder="Date Completed"
                     onChange={(e) => updateValues(e)}
                 />
             </div>
