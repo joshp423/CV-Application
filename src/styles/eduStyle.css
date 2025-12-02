@@ -35,9 +35,14 @@
 
 }
 
-.eduInfoDisplay>h3 {
+.eduInfoDisplay>div>h3 {
     margin-bottom: 0px;
     border-bottom: 1px solid black;
+}
+
+.eduInfoItems {
+    display: flex;
+    flex-direction: column;
 }
 
 .eduInfoTitle {

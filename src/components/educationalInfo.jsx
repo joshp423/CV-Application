@@ -132,36 +132,47 @@ export default function EduInfo({ formState }){
     else {
         return (
             <div className="eduInfoDisplay">
-                <h3>Education</h3>
-                {eduCounter === 1 && (
-                    <>
-                        <h1>{eduInfo[0].schoolName}</h1>
-                        <p>{eduInfo[0].studyTitle + " - " + eduInfo[0].studyDate}</p>
-                    </>
-                )}
+                <div>
+                    <h3>Education</h3>
+                </div>
+                <div className="eduInfoItems">
+                    {eduCounter === 1 && (
+                        <div>
+                            <h1>{eduInfo[0].schoolName}</h1>
+                            <p>{eduInfo[0].studyTitle + " - " + eduInfo[0].studyDate}</p>
+                        </div>
+                    )}
 
-                {eduCounter === 2 && (
-                    <>
-                        <h1>{eduInfo[0].schoolName}</h1>
-                        <p>{eduInfo[0].studyTitle + " - " + eduInfo[0].studyDate}</p>
+                    {eduCounter === 2 && (
+                        <>
+                            <div>
+                                <h1>{eduInfo[0].schoolName}</h1>
+                                <p>{eduInfo[0].studyTitle + " - " + eduInfo[0].studyDate}</p>
+                            </div>
+                            <div>
+                                <h1>{eduInfo[1].schoolName}</h1>
+                                <p>{eduInfo[1].studyTitle + " - " + eduInfo[1].studyDate}</p>
+                            </div>
+                        </>
+                    )}
 
-                        <h1>{eduInfo[1].schoolName}</h1>
-                        <p>{eduInfo[1].studyTitle + " - " + eduInfo[1].studyDate}</p>
-                    </>
-                )}
-
-                {eduCounter === 3 && (
-                    <>
-                        <h1>{eduInfo[0].schoolName}</h1>
-                        <p>{eduInfo[0].studyTitle + " - " + eduInfo[0].studyDate}</p>
-
-                        <h1>{eduInfo[1].schoolName}</h1>
-                        <p>{eduInfo[1].studyTitle + " - " + eduInfo[1].studyDate}</p>
-
-                        <h1>{eduInfo[2].schoolName}</h1>
-                        <p>{eduInfo[2].studyTitle + " - " + eduInfo[2].studyDate}</p>
-                    </>
-                )}
+                    {eduCounter === 3 && (
+                        <>
+                            <div>
+                                <h1>{eduInfo[0].schoolName}</h1>
+                                <p>{eduInfo[0].studyTitle + " - " + eduInfo[0].studyDate}</p>
+                            </div>
+                            <div>
+                                <h1>{eduInfo[1].schoolName}</h1>
+                                <p>{eduInfo[1].studyTitle + " - " + eduInfo[1].studyDate}</p>
+                            </div>
+                            <div>
+                                <h1>{eduInfo[2].schoolName}</h1>
+                                <p>{eduInfo[2].studyTitle + " - " + eduInfo[2].studyDate}</p>
+                            </div>
+                        </>
+                    )}
+                </div>
             </div>
         )
     }
