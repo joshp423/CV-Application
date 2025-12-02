@@ -79,8 +79,12 @@ export default function ExpInfo({ formState }){
 
                     {!expInfo || expCounter < 3 && (
                         <button type="button" onClick={addExp}>
-                            Add Experience - max 3
+                            Add Experience - Max 3
                         </button>
+                    )}
+
+                    {expCounter > 1 && (
+                        <button type="button" onClick={removeExp}>Remove Experience</button>
                     )}
                 </div>
                 <div className="expInfoInputContainer">
@@ -108,7 +112,7 @@ export default function ExpInfo({ formState }){
                                 expInfo = {expInfo}
                                 updateValues={updateValues}
                             />
-                            <button type="button" onClick={removeExp}>Remove Experience</button>
+                            
                         </>
                     )}
 
@@ -124,15 +128,11 @@ export default function ExpInfo({ formState }){
                                 expInfo = {expInfo}
                                 updateValues={updateValues}
                             />
-                            <button type="button" onClick={removeExp}>Remove Experience</button>
-
                             <ExpInputs
                                 iteration = {2}
                                 expInfo = {expInfo}
                                 updateValues={updateValues} 
                             />
-                            <button type="button" onClick={removeExp}>Remove Experience</button>
-
                         </>
                     )}
 

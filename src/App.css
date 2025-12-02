@@ -1,5 +1,6 @@
 body {
   place-items: start;
+  background-color: black;
 }
 
 #root {
@@ -49,14 +50,15 @@ form {
   display: flex;
   flex-direction: column;
   border: 2px solid black;
+  width: 1000px;
+  height: auto;
+  background-color: white;
 }
 
-form>div {
-  padding-left: 250px;
-  padding-right: 250px
-}
 
 input {
   padding: 5px;
   border-radius: 15px;
+  padding-left: 10px;
+  border: 1px solid black;
 }

@@ -25,11 +25,11 @@ function App() {
         formState={formState}
       />
       
-      <ExpInfo
+      <EduInfo
         formState={formState}
       />
 
-      <EduInfo
+      <ExpInfo
         formState={formState}
       />
 

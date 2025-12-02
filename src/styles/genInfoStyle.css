@@ -1,0 +1,9 @@
+.generalInfoForm {
+    border-bottom: 1px solid;
+    margin: 0px 50px 0px 50px;
+    padding-bottom: 20px;
+}
+
+.generalInfoForm>input {
+    margin-right: 5px;
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/genInfoStyle.css";
 
 export default function GeneralInfo({ formState }){
     const [genInfo, setGenInfo] = useState({
@@ -17,6 +18,9 @@ export default function GeneralInfo({ formState }){
     if (formState === 0) {
         return (
             <div className="generalInfoForm">
+
+                <h2>General Information</h2>
+
                 <input
                     placeholder="Name"
                     name="name"
